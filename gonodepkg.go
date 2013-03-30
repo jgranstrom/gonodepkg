@@ -20,7 +20,7 @@
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // This package defines the basic functionality of gonode.
-package gonode
+package gonodepkg
 
 import (
 	"bufio"
