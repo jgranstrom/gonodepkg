@@ -90,7 +90,10 @@ func Start(proc Processor) {
 // Handle a command by invoking processor and send result on stdout
 func handle(id int, cmd *json.Json, proc Processor) {
 	// Create a response with the matching ID
-	r, dat, _ := json.MakeMap()
+	r, dat, err := json.MakeMap()
+	if err != nil {
+		fmt.Println(err)
+	}
 	dat["id"] = id
 	dat["data"] = proc(cmd) // Set response data to processor result	
 	b, _ := r.Encode()
